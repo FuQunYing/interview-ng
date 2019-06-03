@@ -1,0 +1,23 @@
+<div class="graphical">
+  <h3>图形表单</h3>
+  <div class="axis-inner">
+    <div style="height: 50px">
+      <nz-radio-group [(ngModel)]="radioValue" (ngModelChange)="ctlChange()">
+        <label nz-radio nzValue="ctr">平均CTR</label>
+        <label nz-radio nzValue="cpc">平均CPC</label>
+        <label nz-radio nzValue="cpm">平均CPM</label>
+        <label nz-radio nzValue="roi">平均ROI</label>
+        <label nz-radio nzValue="cvr">平均CVR</label>
+      </nz-radio-group>
+    </div>
+    <div class="chart" *ngIf="this.currentData.length > 0 && isShow">
+      <v-chart [forceFit]="forceFit" [height]="height" [data]="currentData" [scale]="scale">
+        <v-tooltip></v-tooltip>
+        <v-axis></v-axis>
+        <v-legend></v-legend>
+        <v-smooth-line position="logDate*value"  shape="smooth"></v-smooth-line>
+        <v-point position="logDate*value"  shape="circle"></v-point>
+      </v-chart>
+    </div>
+  </div>
+</div>

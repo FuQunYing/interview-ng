@@ -1,0 +1,43 @@
+<div class="data-table">
+  <h3>数据表格</h3>
+  <nz-table #nzTable *ngIf="reverseData.length>0"  [nzPageSize]="7" [nzData]="reverseData" nzBordered>
+    <thead (nzSortChange)="sort($event)" nzSingleSort>
+      <tr>
+        <th nzShowSort nzSortKey="logDate">日期</th>
+        <th nzShowSort nzSortKey="ctr">平均CTR</th>
+        <th nzShowSort nzSortKey="ecpc">平均CPC</th>
+        <th nzShowSort nzSortKey="ecpm">平均CPM</th>
+        <th nzShowSort nzSortKey="roi">平均ROI</th>
+        <th>平均展现</th>
+        <th>付款订单</th>
+        <th>付款订单金额</th>
+        <th>平均点击</th>
+        <th>平均花费</th>
+        <th nzShowSort nzSortKey="cvr">平均CVR</th>
+        <th>下单订单</th>
+        <th>下单订单金额</th>
+        <th>店铺收藏成本</th>
+        <th>宝贝收藏成本</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of nzTable.data ">
+        <td>{{item.logDate}}</td>
+        <td>{{number(item.ctr) }}</td>
+        <td>{{item.ecpc}}</td>
+        <td>{{item.ecpm}}</td>
+        <td>{{item.roi}}</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>{{item.cvr}}</td>
+        <td>0</td>
+        <td>0</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

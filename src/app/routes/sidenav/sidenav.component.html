@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="aside">
+    <ul nz-menu>
+      <li nz-menu-item *ngFor="let temp of rList.components" >
+        <a title routerLink="/{{temp.path}}">
+          <i nz-icon [type]= temp.icon></i>
+          {{temp.zh}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</div>
